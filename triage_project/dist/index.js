@@ -19921,15 +19921,15 @@ const github = __nccwpck_require__(4176);
 
 
 try {
-  const colId = core.getInput('PROJECT_COLUMN_ID');
+  const colId = parseInt(core.getInput('PROJECT_COLUMN_ID'));
   const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
 
   console.log(`ColId: [${colId}]`);
   console.log(`Token: [${token}]`);
 
   // Get the JSON webhook payload for the event that triggered the workflow
-  const issId = JSON.stringify(github.context.payload.issue.id)
-  console.log(`The event payload.issue.id: ${issId}`)
+  const issId = parseInt(JSON.stringify(github.context.payload.issue.id));
+  console.log(`The event payload.issue.id: ${issId}`);
 
   const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ 'auth': token });
 //  octokit.rest.projects.createCard({
