@@ -19934,18 +19934,6 @@ try {
   console.log(`Issue: [${issue}]`);
  
   const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ 'auth': token });
-
-//  // Get the JSON webhook payload for the event that triggered the workflow
-//  const issId = JSON.stringify(github.context.payload.issue.id)
-//  console.log(`The event payload.issue.id: ${issId}`)
-
-//  github.rest.issues.addLabels({
-//    'issue_number': issue,
-//    'owner': owner,
-//    'repo': repo,
-//    'labels': [ label ]
-//  });
-
   octokit.rest.issues.update({
     'owner': owner,
     'repo': repo,
