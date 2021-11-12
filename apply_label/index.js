@@ -4,9 +4,9 @@ const github = require('@actions/github');
 try {
   const label = core.getInput('LABEL');
   const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
-  const owner = context.repo.owner;
-  const repo = context.repo.repo;
-  const issue = context.issue.number;
+  const owner = github.context.repo.owner;
+  const repo = github.context.repo.repo;
+  const issue = github.context.issue.number;
 
   console.log(`Label: [${label}]`);
   console.log(`Token: [${token}]`);
