@@ -14,12 +14,12 @@ try {
   console.log(`The event payload.issue.id: ${issId}`)
 
   const octokit = new Octokit({ 'auth': token });
-  octokit.rest.projects.createCard({
-    'column_id': colId,
-    'note': null,
-    'content_id': issId,
-    'content_type': 'Issue',
-  });
+//  octokit.rest.projects.createCard({
+//    'column_id': colId,
+//    'note': null,
+//    'content_id': issId,
+//    'content_type': 'Issue',
+//  });
 } catch (error) {
   core.setFailed(error.message);
 }
