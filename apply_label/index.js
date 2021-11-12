@@ -1,11 +1,10 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const ghapi = require('github-api');
+import { Octokit, App } from "octokit";
 
 try {
   const label = core.getInput('LABEL');
   const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
-  const octokit = new ghapi.GitHub(token);
   const owner = github.context.repo.owner;
   const repo = github.context.repo.repo;
   const issue = github.context.issue.number;
@@ -16,6 +15,8 @@ try {
   console.log(`Repo:  [${repo}]`);
   console.log(`Issue: [${issue}]`);
  
+  const octokit = new Octokit({ 'auth': token });
+
 //  // Get the JSON webhook payload for the event that triggered the workflow
 //  const issId = JSON.stringify(github.context.payload.issue.id)
 //  console.log(`The event payload.issue.id: ${issId}`)
