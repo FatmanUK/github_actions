@@ -28,7 +28,7 @@ try {
 //    'labels': [ label ]
 //  });
 
-  octokit.issues.update({
+  octokit.rest.issues.update({
     'owner': owner,
     'repo': repo,
     'issue_number': issue,
