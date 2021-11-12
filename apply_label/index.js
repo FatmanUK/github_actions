@@ -1,15 +1,27 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+import { Octokit, App } from "octokit";
 
 try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+  const label = core.getInput('LABEL');
+  const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
+  const owner = github.context.repo.owner;
+  const repo = github.context.repo.repo;
+  const issue = github.context.issue.number;
+
+  console.log(`Label: [${label}]`);
+  console.log(`Token: [${token}]`);
+  console.log(`Owner: [${owner}]`);
+  console.log(`Repo:  [${repo}]`);
+  console.log(`Issue: [${issue}]`);
+ 
+  const octokit = new Octokit({ 'auth': token });
+  octokit.rest.issues.update({
+    'owner': owner,
+    'repo': repo,
+    'issue_number': issue,
+    'labels': [ label ]
+  });
 } catch (error) {
   core.setFailed(error.message);
 }
