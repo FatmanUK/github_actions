@@ -8451,15 +8451,18 @@ const github = __nccwpck_require__(4176);
 
 try {
   const colId = core.getInput('PROJECT_COLUMN_ID');
-  const issue = core.getInput('ISSUE_NUMBER');
+// TODO: remove ISSUE_NUMBER in workflow, don't need it
+//  const issue = core.getInput('ISSUE_NUMBER');
   const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
   console.log(`ColId: [${colId}]`);
   console.log(`Issue: [${issue}]`);
   console.log(`Token: [${token}]`);
 
   // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload.issue.id: ${payload.issue.id}`);
+//  const payload = JSON.stringify(github.context.payload, undefined, 2)
+//  console.log(`The event payload.issue.id: ${payload.issue.id}`);
+  const issId = JSON.stringify(github.context.payload.issue.id)
+  console.log(`The event payload.issue.id: ${issId}`)
 
 } catch (error) {
   core.setFailed(error.message);
