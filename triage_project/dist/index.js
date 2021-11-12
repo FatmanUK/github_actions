@@ -8455,7 +8455,7 @@ try {
 //  const issue = core.getInput('ISSUE_NUMBER');
   const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
   console.log(`ColId: [${colId}]`);
-  console.log(`Issue: [${issue}]`);
+//  console.log(`Issue: [${issue}]`);
   console.log(`Token: [${token}]`);
 
   // Get the JSON webhook payload for the event that triggered the workflow
