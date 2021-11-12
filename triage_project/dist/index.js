@@ -19929,7 +19929,7 @@ try {
 
   // Get the JSON webhook payload for the event that triggered the workflow
   const issId = parseInt(JSON.stringify(github.context.payload.issue.id));
-  console.log(`The event payload: ${github.context.payload.issue}`);
+//  console.log(`The event payload: ${github.context.payload.issue}`);
 
   const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ 'auth': token });
   octokit.rest.projects.createCard({
