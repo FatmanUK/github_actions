@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const ghapi = require('github-api');
+const ghapi = require('@actions/github-api');
 
 try {
   const label = core.getInput('LABEL');

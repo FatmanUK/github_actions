@@ -8281,18 +8281,18 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 4565:
+/***/ 895:
 /***/ ((module) => {
 
-module.exports = eval("require")("encoding");
+module.exports = eval("require")("@actions/github-api");
 
 
 /***/ }),
 
-/***/ 4350:
+/***/ 4565:
 /***/ ((module) => {
 
-module.exports = eval("require")("github-api");
+module.exports = eval("require")("encoding");
 
 
 /***/ }),
@@ -8452,7 +8452,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2810);
 const github = __nccwpck_require__(4176);
-const ghapi = __nccwpck_require__(4350);
+const ghapi = __nccwpck_require__(895);
 
 try {
   const label = core.getInput('LABEL');
