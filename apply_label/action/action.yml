@@ -1,0 +1,21 @@
+---
+name: 'Apply label'
+description: 'Apply a given label to a given ticket'
+author: 'Adam J. Richardson'
+inputs:
+  LABEL:
+    description: 'The label to apply (label must exist).'
+    required: yes
+  ISSUE_NUMBER:
+    description: 'The ticket to label.'
+    required: yes
+  GITHUB_PERSONAL_ACCESS_TOKEN:
+    description: 'The PAT to use for access.'
+    required: yes
+branding:
+  color: 'blue'
+  icon: 'check-square'
+runs:
+  using: 'node12'
+  main: 'index.js'
+...

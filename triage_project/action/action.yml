@@ -1,0 +1,22 @@
+---
+name: 'Issue to Triage project'
+description: 'Send an issue to the Triage project'
+author: 'Adam J. Richardson'
+inputs:
+  PROJECT_COLUMN_ID:
+    description: 'The project column ID destination for issues.'
+    required: yes
+    default: '15654647'
+  ISSUE_NUMBER:
+    description: 'The ticket to move.'
+    required: yes
+  GITHUB_PERSONAL_ACCESS_TOKEN:
+    description: 'The PAT to use for access.'
+    required: yes
+branding:
+  color: 'blue'
+  icon: 'check-square'
+runs:
+  using: 'node12'
+  main: 'index.js'
+...
