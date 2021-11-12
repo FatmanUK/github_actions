@@ -1,15 +1,14 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const ghapi = require('@actions/github-api');
+const ghapi = require('github-api');
 
 try {
   const label = core.getInput('LABEL');
   const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
   const octokit = new ghapi.GitHub(token);
-  const context = github.context;
-  const owner = context.repo.owner;
-  const repo = context.repo.repo;
-  const issue = context.issue.number;
+  const owner = github.context.repo.owner;
+  const repo = github.context.repo.repo;
+  const issue = github.context.issue.number;
 
   console.log(`Label: [${label}]`);
   console.log(`Token: [${token}]`);
