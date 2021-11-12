@@ -1,11 +1,11 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-import GitHub from 'github-api';
+const ghapi = require('github-api');
 
 try {
   const label = core.getInput('LABEL');
   const token = core.getInput('GITHUB_PERSONAL_ACCESS_TOKEN');
-  const octokit = new github.GitHub(token);
+  const octokit = new ghapi.GitHub(token);
   const context = github.context;
   const owner = context.repo.owner;
   const repo = context.repo.repo;
