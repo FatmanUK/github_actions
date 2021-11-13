@@ -6,7 +6,6 @@ inputs:
   PROJECT_COLUMN_ID:
     description: 'The project column ID destination for issues.'
     required: yes
-    default: '15654647'
   GITHUB_PERSONAL_ACCESS_TOKEN:
     description: 'The PAT to use for access.'
     required: yes
