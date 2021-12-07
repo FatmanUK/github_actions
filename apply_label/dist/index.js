@@ -19940,15 +19940,20 @@ try {
     'issue_number': issue,
   })
   .then(({ labels }) => {
+    console.table(labels);
+/*
     var labelstr = JSON.stringify(labels);
     console.log(`Labels: ${labelstr}`);
     labels.push(label);
+*/
+/*
     octokit.rest.issues.update({
       'owner': owner,
       'repo': repo,
       'issue_number': issue,
       'labels': labels
     });
+*/
   })
   .catch(error => {
     console.log("error", error);
