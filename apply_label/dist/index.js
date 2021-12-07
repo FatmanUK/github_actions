@@ -19940,9 +19940,25 @@ try {
     'issue_number': issue,
   })
   .then(existing_labels => {
-    Object.keys(existing_labels).forEach(key => {
+    // this is useful to show object members
+    // status 200
+    // url https://api.github.com/repos/FatmanUK/dreamtrack21/issues/497/labels
+    // headers { uninteresting }
+    // data [
+    //  {
+    //    id: 3354422062,
+    //    node_id: 'MDU6TGFiZWwzMzU0NDIyMDYy',
+    //    url: 'https://api.github.com/repos/FatmanUK/dreamtrack21/labels/task',
+    //    name: 'task',
+    //    color: '4B4074',
+    //    default: false,
+    //    description: 'Not a bug or feature but something that needs doing.'
+    //  }
+    // ]
+    /*Object.keys(existing_labels).forEach(key => {
       console.log(key, existing_labels[key]);
-    });
+    });*/
+    console.log('data', existing_labels['data']);
 /*
     var labelstr = JSON.stringify(labels);
     console.log(`Labels: ${labelstr}`);
