@@ -19941,48 +19941,18 @@ try {
   })
   .then(blob => {
     // this is useful to show object members
-    // status 200
-    // url https://api.github.com/repos/FatmanUK/dreamtrack21/issues/497/labels
-    // headers { uninteresting }
-    // data [
-    //  {
-    //    id: 3354422062,
-    //    node_id: 'MDU6TGFiZWwzMzU0NDIyMDYy',
-    //    url: 'https://api.github.com/repos/FatmanUK/dreamtrack21/labels/task',
-    //    name: 'task',
-    //    color: '4B4074',
-    //    default: false,
-    //    description: 'Not a bug or feature but something that needs doing.'
-    //  }
-    // ]
     /*Object.keys(existing_labels).forEach(key => {
       console.log(key, existing_labels[key]);
     });*/
-    console.log('data', blob['data']);
-    /*
-data [
-  {
-    id: 2859686524,
-    node_id: 'MDU6TGFiZWwyODU5Njg2NTI0',
-    url: 'https://api.github.com/repos/FatmanUK/dreamtrack21/labels/spike',
-    name: 'spike',
-    color: '561062',
-    default: false,
-    description: 'Investigation is required to answer this question.'
-  }
-]
-    */
+    //console.log('data', blob['data']);
     var labels = new Array();
     blob['data'].forEach(val => {
       var l = val['name'];
       labels.push(l);
-      console.log(`Label: ${l}`);
+      //console.log(`Label: ${l}`);
     });
-/*
-    var labelstr = JSON.stringify(labels);
-    console.log(`Labels: ${labelstr}`);
     labels.push(label);
-*/
+    console.log(`Labels: ${labels}`);
 /*
     octokit.rest.issues.update({
       'owner': owner,
