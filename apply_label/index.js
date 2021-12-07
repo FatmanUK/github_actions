@@ -20,6 +20,7 @@ try {
     'repo': repo,
     'issue_number': issue,
   });
+  console.log(`Labels: [${labels}]`);
   labels.push(label);
 
   console.log(`Labels: [${labels}]`);
