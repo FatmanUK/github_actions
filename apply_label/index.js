@@ -26,7 +26,6 @@ try {
     /*Object.keys(existing_labels).forEach(key => {
       console.log(key, existing_labels[key]);
     });*/
-    //console.log('data', blob['data']);
     var labels = new Array();
     blob['data'].forEach(val => {
       var l = val['name'];
@@ -34,15 +33,13 @@ try {
       //console.log(`Label: ${l}`);
     });
     labels.push(label);
-    console.log(`Labels: ${labels}`);
-/*
+    console.log(`Labels: [${labels}]`);
     octokit.rest.issues.update({
       'owner': owner,
       'repo': repo,
       'issue_number': issue,
       'labels': labels
     });
-*/
   })
   .catch(error => {
     console.log("error", error);
