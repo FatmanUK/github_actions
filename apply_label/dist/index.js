@@ -19933,7 +19933,7 @@ try {
   console.log(`Issue: [${issue}]`);
 
   const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ 'auth': token });
-  labels = octokit.rest.issues.listLabelsOnIssue({
+  var labels = octokit.rest.issues.listLabelsOnIssue({
     'owner': owner,
     'repo': repo,
     'issue_number': issue,
