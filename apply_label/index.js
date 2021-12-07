@@ -21,10 +21,10 @@ try {
     'repo': repo,
     'issue_number': issue,
   })
-  .then(({ data }) => {
-    console.log(`Data: ${data}`);
-    data.push(label);
-    console.log(`Data: ${data}`);
+  .then(({ labels }) => {
+    labelstr = JSON.stringify(labels);
+    console.log(`Labels: ${labelstr}`);
+    labels.push(label);
     octokit.rest.issues.update({
       'owner': owner,
       'repo': repo,
