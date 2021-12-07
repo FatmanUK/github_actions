@@ -15,7 +15,7 @@ try {
   console.log(`Issue: [${issue}]`);
 
   const octokit = new Octokit({ 'auth': token });
-  labels = octokit.rest.issues.listLabelsOnIssue({
+  var labels = octokit.rest.issues.listLabelsOnIssue({
     'owner': owner,
     'repo': repo,
     'issue_number': issue,
