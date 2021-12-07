@@ -19972,9 +19972,10 @@ data [
   }
 ]
     */
-    labels = [];
+    var labels = new Array();
     blob['data'].forEach(val => {
       var l = val['name'];
+      labels.push(l);
       console.log(`Label: ${l}`);
     });
 /*
