@@ -21,7 +21,7 @@ try {
     'repo': repo,
     'issue_number': issue,
   })
-  .then(existing_labels => {
+  .then(blob => {
     // this is useful to show object members
     // status 200
     // url https://api.github.com/repos/FatmanUK/dreamtrack21/issues/497/labels
@@ -40,7 +40,25 @@ try {
     /*Object.keys(existing_labels).forEach(key => {
       console.log(key, existing_labels[key]);
     });*/
-    console.log('data', existing_labels['data']);
+    console.log('data', blob['data']);
+    /*
+data [
+  {
+    id: 2859686524,
+    node_id: 'MDU6TGFiZWwyODU5Njg2NTI0',
+    url: 'https://api.github.com/repos/FatmanUK/dreamtrack21/labels/spike',
+    name: 'spike',
+    color: '561062',
+    default: false,
+    description: 'Investigation is required to answer this question.'
+  }
+]
+    */
+    labels = [];
+    blob['data'].forEach(val => {
+      var l = val['name'];
+      console.log(`Label: ${l}`);
+    });
 /*
     var labelstr = JSON.stringify(labels);
     console.log(`Labels: ${labelstr}`);
