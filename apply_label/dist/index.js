@@ -19927,21 +19927,20 @@ try {
   const repo = github.context.repo.repo;
   const issue = github.context.issue.number;
 
-  // get current labels and set labels array
+  console.log(`Token: [${token}]`);
+  console.log(`Owner: [${owner}]`);
+  console.log(`Repo:  [${repo}]`);
+  console.log(`Issue: [${issue}]`);
+
+  const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ 'auth': token });
   labels = octokit.rest.issues.listLabelsOnIssue({
     'owner': owner,
     'repo': repo,
     'issue_number': issue,
   });
-
-  console.log(`Token: [${token}]`);
-  console.log(`Owner: [${owner}]`);
-  console.log(`Repo:  [${repo}]`);
-  console.log(`Issue: [${issue}]`);
   labels.push(label);
 
   console.log(`Labels: [${labels}]`);
-  const octokit = new octokit__WEBPACK_IMPORTED_MODULE_0__/* .Octokit */ .vd({ 'auth': token });
   octokit.rest.issues.update({
     'owner': owner,
     'repo': repo,
