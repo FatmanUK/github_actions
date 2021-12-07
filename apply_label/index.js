@@ -21,8 +21,10 @@ try {
     'repo': repo,
     'issue_number': issue,
   })
-  .then(({ labels }) => {
-    console.table(labels);
+  .then(existing_labels => {
+    Object.keys(existing_labels).forEach(key => {
+      console.log(key, existing_labels[key]);
+    });
 /*
     var labelstr = JSON.stringify(labels);
     console.log(`Labels: ${labelstr}`);
