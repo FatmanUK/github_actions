@@ -22,7 +22,7 @@ try {
     'issue_number': issue,
   })
   .then(({ labels }) => {
-    labelstr = JSON.stringify(labels);
+    var labelstr = JSON.stringify(labels);
     console.log(`Labels: ${labelstr}`);
     labels.push(label);
     octokit.rest.issues.update({
